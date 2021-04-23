@@ -1,0 +1,5 @@
+Flask>=1.1.2
+flask-script
+flask-blueprint
+fireo
+firebase_admin
