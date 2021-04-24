@@ -1,10 +1,7 @@
-import fireo
 from flask import Blueprint, request
 
-from api.application_service import add_application, delete_application
+from api.application_service import add_application, delete_application, update_application
 from api.model.application import Application
-from api.model.hacker import Hacker
-from api.model.volunteer import Volunteer
 
 applicants_controller = Blueprint('applicant', __name__)
 
@@ -59,3 +56,18 @@ def delete_applicant_by_email():
         return {'errorMessage': "Not Found"}, 404
     delete_application(result)
     return {"Stats": "Success"}, 201
+
+
+@applicants_controller.route("", methods=['PUT'])
+def update_applicant_by_id():
+    data = request.json
+    application_id = data.get("application_id")
+    old_data = Application.collection.get("application/" + application_id)
+    print(old_data)
+    if old_data is None:
+        return {'errorMessage': "Not Found"}, 404
+    else:
+        data.pop('email', True)
+        data.pop('application_type', True)
+        update_application(old_data, data)
+        return {"Message": "success"}, 201

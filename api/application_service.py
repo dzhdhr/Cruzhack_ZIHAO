@@ -40,3 +40,16 @@ def delete_application(target):
     else:
         Hacker.collection.delete(target.hacker_ref.key)
     Application.collection.delete(target.key)
+
+
+def update_application(old_data, new_data):
+    if old_data.application_type == "Volunteer":
+        volunteer = Volunteer.from_dict(new_data)
+        volunteer.update(old_data.volunteer_ref.key)
+    else:
+        hacker = Hacker.from_dict(new_data)
+        hacker.update(old_data.hacker_ref.key)
+    application = Application.from_dict(new_data)
+    application.email = None
+    application.application_type = None
+    application.update(old_data.key)

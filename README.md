@@ -1,5 +1,5 @@
 # CruzHacks 2022 Backend Engineering Challenge
-RESTFUL api for CruzHacks Challenge
+RESTFUL API for CruzHacks Challenge
 
 ## Instruction
 - to Install all the requirement: `pip install -r reqirement.txt`
@@ -12,5 +12,5 @@ RESTFUL api for CruzHacks Challenge
 - [x] Get all hackers
 - [x] Get all volunteers
 - [x] Create a new applicant document
-- [ ] Update an applicant document
+- [x] Update an applicant document
 - [x] Delete an applicant document given an id and or email

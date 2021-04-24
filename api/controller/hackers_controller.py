@@ -17,5 +17,4 @@ def get_all_hacker():
         ret_dict.pop('key')
         ret.append(ret_dict)
 
-    return jsonify({"hacker":ret})
-
+    return jsonify({"hacker": ret})

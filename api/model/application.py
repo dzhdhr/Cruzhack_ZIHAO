@@ -17,6 +17,8 @@ class Gender(Field):
     genders = ['female', 'male', 'trans', 'non-binary', 'other']
 
     def db_value(self, val):
+        if val is None:
+            return None
         return self.genders[val]
 
 
@@ -24,6 +26,8 @@ class ApplicationType(Field):
     application_types = ['Hacker', 'Volunteer']
 
     def db_value(self, val):
+        if val is None:
+            return val
         return self.application_types[val]
 
 
