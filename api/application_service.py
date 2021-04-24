@@ -7,13 +7,12 @@ def add_application(data):
     a = Application(first_name=data.get('first_name'), email=data.get('email'), last_name=data.get('last_name'),
                     gender=data.get('gender'), age=data.get('age'), application_type=data.get('application_type'))
     if a.application_type == 0:
-        hacker_data = data.get('hacker')
-        print(hacker_data)
-        hacker = Hacker(graduation=hacker_data.get('graduation'), reason="reason")
-        if hacker_data.get('is_ucsc'):
+        print(data.get('graduation'))
+        hacker = Hacker.from_dict(data)
+        if data.get('is_ucsc'):
             hacker.school = "ucsc"
         else:
-            hacker.school = hacker_data.get("school")
+            hacker.school = data.get("school")
         hacker.save()
         try:
             a.hacker_ref = hacker
@@ -22,9 +21,9 @@ def add_application(data):
             Hacker.collection.delete(hacker.key)
             raise ValueError("Invalid email")
     else:
-        volunteer_data = data.get('volunteer')
-        print(volunteer_data)
-        volunteer = Volunteer.from_dict(volunteer_data)
+        # volunteer_data = data.get('volunteer')
+        # print(volunteer_data)
+        volunteer = Volunteer.from_dict(data)
         volunteer.save()
         try:
             a.volunteer_ref = volunteer

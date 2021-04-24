@@ -3,3 +3,4 @@ flask-script
 flask-blueprint
 fireo
 firebase_admin
+flasgger

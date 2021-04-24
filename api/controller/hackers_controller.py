@@ -7,6 +7,18 @@ hackers_controller = Blueprint('hacker', __name__)
 
 @hackers_controller.route("/listall", methods=['GET'])
 def get_all_hacker():
+    """
+        Get all hackers
+        ---
+        tags:
+          -get_all_hacker
+        description:
+           Get all hackers
+        responses:
+          200:
+              description: get success return json for all hacker info
+    """
+
     h = Application.collection.filter("application_type", "==", "Hacker").fetch()
     ret = []
     for hacker in h:
