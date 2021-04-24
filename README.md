@@ -1,9 +1,10 @@
 # CruzHacks 2022 Backend Engineering Challenge
-RESTFUL API for CruzHacks Challenge
+RESTful API for CruzHacks Challenge
 
 ## Instruction
 - to Install all the requirement: `pip install -r reqirement.txt`
 - to start application `python app.py runserver`
+- once start the application request `http://localhost:5000/apidocs/` for detailed documentation
 
 
 ## Goals
