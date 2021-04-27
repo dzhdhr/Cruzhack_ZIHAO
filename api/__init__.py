@@ -15,9 +15,4 @@ def create_app():
     app.config.from_object(envs.get('develop'))
     init_ext(app=app)
     init_blueprint(app=app)
-    swagger_config = Swagger.DEFAULT_CONFIG
-    swagger_config['title'] = "Cruzhack API"
-    swagger_config['description'] = "API for CRUZHACK"
-    swagger_config['description'] = "http://127.0.0.1:5000/"
-    Swagger(app, config=swagger_config)
     return app

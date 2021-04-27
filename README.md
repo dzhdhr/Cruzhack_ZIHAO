@@ -5,7 +5,7 @@ RESTful API for CruzHacks Challenge
 - to Install all the requirement: `pip install -r reqirement.txt`
 - to start application `python app.py runserver`
 - once start the application request `http://localhost:5000/apidocs/` for detailed documentation
-- make sure the admin sdk are named as `cruzhack-6a851-firebase-adminsdk-y0k9t-837fb3ef13.json`
+- make sure the admin sdk are named as `cruzhack-6a851-firebase-adminsdk-y0k9t-837fb3ef13.json` or edit the setting.py file's `FIREBASE` property to the admin key path. 
 
 ## Goals
 - [x] Get all the applicants
